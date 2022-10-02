@@ -1,7 +1,9 @@
 # customize-arXiv-push
-It is an easy-to-use tool to customize your arXiv paper push.
+- It is an easy-to-use tool to customize your arXiv paper push.
 
-If you would like to contribute to our repository or have any questions/advice, see [Contributing & Contact](#contributing--contact).
+- It can push arXiv papers of your interested authors and titles to your email every day/weak.   
+
+- If you would like to contribute to our repository or have any questions/advice, see [Contributing & Contact](#contributing--contact).
 
 ## Contents
 - [customize-arXiv-push](#customize-arxiv-push)

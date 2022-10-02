@@ -33,7 +33,7 @@ python main.py \
 --title_path ${TITLE_PATH}
 ```
 Note:
-- The *Code* of **SUBJECT** can be chosen from the following table. Or you can enter your own url. For example, you can set `SUBJECT=cs.CV` or `SUBJECT=https://arxiv.org/list/math.PR/pastweek?show=10000`.
+- The *Code* of **SUBJECT** can be chosen from the following table. Or you can enter your own url. For example, you can set `SUBJECT="cs.CV"` or `SUBJECT="https://arxiv.org/list/math.PR/pastweek?show=10000"`.
 
 | Subject | Code | Url |
 | ---- | ---- | ---- |
@@ -42,11 +42,11 @@ Note:
 | Artificial Intelligence | cs.AI | https://arxiv.org/list/cs.AI/pastweek?show=10000 |
 | Computation and Language | cs.CL | https://arxiv.org/list/cs.CL/pastweek?show=10000 |
 
-- Set **PAPER_PATH** with a csv path, like `PAPER_PATH=D:/all_papers.csv`, to save all the papers in the past week.
-- Set **AUTHORS** with the authors you are interested, like `AUTHORS='Kaiming He, Yann LeCun, Ilya Sutskever, Geoffrey Hinton'`, separated by commas.
-- Set **AUTHOR_PATH** with a csv path, like `AUTHOR_PATH=D:/interested_authors.csv`, to save the papers of your interested authors.
-- Set **TITLES** with the keywords you are interested, like `TITLES='Object Detection, Machine Translation, Multi-Agent, Pretrain'`
-- Set **TITLE_PATH** with a csv path, like `TITLE_PATH=D:/interested_titles.csv`, to save the papers of your interested titles.
+- Set **PAPER_PATH** with a csv path, like `PAPER_PATH="./all_papers.csv"`, to save all the papers in the past week.
+- Set **AUTHORS** with the authors you are interested, like `AUTHORS="Kaiming He, Yann LeCun, Ilya Sutskever, Geoffrey Hinton"`, separated by commas.
+- Set **AUTHOR_PATH** with a csv path, like `AUTHOR_PATH="./interested_authors.csv"`, to save the papers of your interested authors.
+- Set **TITLES** with the keywords you are interested, like `TITLES="Object Detection, Machine Translation, Multi-Agent, Pretrain"`
+- Set **TITLE_PATH** with a csv path, like `TITLE_PATH="D:/interested_titles.csv"`, to save the papers of your interested titles.
 
 ## Contributing & Contact
 

@@ -1,9 +1,9 @@
 # customize-arXiv-push
 - It is an easy-to-use tool to customize your arXiv paper push.
 
-- It can extract recent arXiv papers of your interested authors and titles.
+- It can extract recent arXiv papers with your interested authors and titles.
 
-- And push the information to your email every day/weak.   
+- And push the information to your computer every day/weak.   
 
 - If you would like to contribute to our repository or have any questions/advice, see [Contributing & Contact](#contributing--contact).
 

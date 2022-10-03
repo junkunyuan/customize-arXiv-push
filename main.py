@@ -1,55 +1,59 @@
-from sympy import arg
-from main_engine import ArxivSearchEngine
+# -----------------------------------------------------------------
+# Customize arXiv push
+# Main file to run
+# Written by Junkun Yuan
+# -----------------------------------------------------------------
 
 import argparse
 
-subject_list = {
-    'cs.CV': 'https://arxiv.org/list/cs.CV/pastweek?show=10000', 
-    'cs.LG': 'https://arxiv.org/list/cs.LG/pastweek?show=10000',
-    'stat.ML': 'https://arxiv.org/list/stat.ML/pastweek?show=10000', 
-    'cs.AI': 'https://arxiv.org/list/cs.AI/pastweek?show=10000',
-    'cs.CL': 'https://arxiv.org/list/cs.CL/pastweek?show=10000', 
-    }
+from engine import ArxivSearchEngine
 
 def set_config():
-    parser = argparse.ArgumentParser('Run', add_help=False)
+    parser = argparse.ArgumentParser('Customize your arXiv push', add_help=False)
 
-    parser.add_argument('--subject', default='cv', type=str, help='Subject to search, choose from preset list or customized url')
-
-    parser.add_argument('--all_papers_path', default=None, type=str, help='If you set the (csv) path, it means that you would like to save all the papers')
-
-    parser.add_argument('--authors', default=None, type=str, help='Interested authors to search')
-    parser.add_argument('--author_path', default='interested_authors.csv', type=str, help='Path to save papers of interested authors')
-
-    parser.add_argument('--titles', default=None, type=str, help='Interested titles to search')
-    parser.add_argument('--title_path', default='interested_title.csv', type=str, help='Path to save papers of interested titles')
-
-    parser.add_argument
+    # Search parameters
+    parser.add_argument('--subject', default='cs.CV', type=str, help='Subjects to search, choose by clicking the subjects in https://arxiv.org/')
+    parser.add_argument('--authors', default=None, type=str, help='Interested authors to search, separated by commas')
+    parser.add_argument('--titles', default=None, type=str, help='Interested titles to search, separated by commas')
+    # parser.add_argument('--abstracts', default=None, type=str, help='Interested abstracts to search, separated by commas')
+    parser.add_argument('--option', choices=['day', 'weak'], type=str, help='Search results in the past day or weak')
+    
+    parser.add_argument('--path', default=None, type=str, help='Path to save the result with csv file')
 
     return parser.parse_args()
 
+
+def split_arg(_args):
+    """Split args separated by commas."""
+    return [arg.strip() for arg in _args.strip().split(',')]
+
+
 if __name__ == '__main__':
+
     args = set_config()
 
-    if args.subject in subject_list:
-        url = subject_list[args.subject]
-    elif 'http' in args.subject:
-        url = args.subject
-    else:
-        raise 'Wrong subject!' 
-    
-    # Create a crawler and search engine
-    engine = ArxivSearchEngine(url)
+    subjects = split_arg(args.subject)
 
-    # Extract info of field, number, date, url, title, author, subject, and save the info if all_papers_path is set
-    engine.extract_info(args.all_papers_path)
+    for subject in subjects:
+        args.subject = subject
+        
+        # Create a crawler and search engine
+        engine = ArxivSearchEngine(args)
 
-    # Extract info of interested authors
-    keywords = args.authors.split(',')
-    keywords = [keyword.strip() for keyword in keywords]
-    engine.search_author(keywords, args.author_path)
+        # Extract info and save it
+        engine.extract_info(args)
 
-    # Extract info of interested titles
-    keywords = args.titles.split(',')
-    keywords = [keyword.strip() for keyword in keywords]
-    engine.search_title(keywords, args.title_path)
+        # Extract info of interested authors
+        if args.authors is not None:
+            keywords = split_arg(args.authors)
+            engine.search_author(args, keywords)
+
+        # Extract info of interested titles
+        if args.titles is not None:
+            keywords = split_arg(args.titles)
+            engine.search_title(args, keywords)
+        
+        # # Extract info of interested abstracts
+        # if args.abstracts is not None:
+        #     abstracts = split_arg(args.abstracts)
+        #     engine.search_abstract(args, abstracts)

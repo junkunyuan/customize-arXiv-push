@@ -29,7 +29,9 @@ pip install beautifulsoup4  # Or using pip
 ### Getting a push
 
 An example of steps to get a push of the papers in the past weak:
+
 ***Step 1:*** Configure the `run.sh`:
+
 ```bash
 #!/bin/sh
 # Please use absolute path
@@ -40,7 +42,9 @@ An example of steps to get a push of the papers in the past weak:
 --option weak \
 --path /home/<user_name>/
 ```
+
 ***Step 2:*** Run 
+
 ```bash
 sh run.sh
 ```
@@ -69,6 +73,7 @@ Note:
 An example of steps to get daily push:
 
 ***Step 1:*** Configure the `run.sh`:
+
 ```bash
 #!/bin/sh
 # Please use absolute path
@@ -98,6 +103,7 @@ Find the daily reports at 14:30 every afternoon.
 ### Getting weakly push
 
 ***Step 1:*** Configure the `run.sh`:
+
 ```bash
 #!/bin/sh
 # Please use absolute path
@@ -111,6 +117,7 @@ Find the daily reports at 14:30 every afternoon.
 
 ***Step 2:***
 Set weakly push at 9:10 every Friday afternoon with crontab:
+
 ```bash
 crontab -e
 # Write command below and save it 

@@ -15,6 +15,7 @@
     - [Getting a push](#getting-a-push)
     - [Getting daily push](#getting-daily-push)
     - [Getting weakly push](#getting-weakly-push)
+  - [Security & Privacy](#security--privacy)
   - [Contributing & Contact](#contributing--contact)
 
 ## Environment
@@ -127,6 +128,11 @@ crontab -l  # Check your command
 
 ***Step 3:***
 Find the weakly reports at 9:10 every Friday afternoon.
+
+## Security & Privacy
+We only provide a tool to help you find the papers with you may interested. 
+
+It is your own responsibility to ensure the safety and privacy.
 
 ## Contributing & Contact
 

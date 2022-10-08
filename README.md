@@ -31,7 +31,7 @@ pip install beautifulsoup4  # Or using pip
 
 An example of steps to get a push of the papers in the past weak:
 
-***Step 1:*** Configure the `run.sh`:
+***Step 1:*** Configure the `run_weakly.sh`:
 
 ```bash
 #!/bin/sh
@@ -47,7 +47,7 @@ An example of steps to get a push of the papers in the past weak:
 ***Step 2:*** Run 
 
 ```bash
-sh run.sh
+sh run_weakly.sh
 ```
 
 ***Step 3:***
@@ -64,16 +64,15 @@ Note:
 | Artificial Intelligence | cs.AI |
 | Computation and Language | cs.CL |
 
-- The argument of **authors** is the authors you are interested, they should be separated by commas.
-- The argument of  **titles** is the keywords you are interested, they should be separated by commas.
-- The argument of **option** chooses to search results in the past `weak` or past `day`. 
+- The argument of **authors** and **titles** are the authors and titles you are interested, they should be separated by commas.
+- The argument of **option** makes search results in the past `weak` or past `day`. 
 - The argument of **path** is the path to save the result with csv file. You can discard this argument and the result will be saved in the project.
 
 ### Getting daily push
 
 An example of steps to get daily push:
 
-***Step 1:*** Configure the `run.sh`:
+***Step 1:*** Configure the `run_daily.sh`:
 
 ```bash
 #!/bin/sh
@@ -87,13 +86,12 @@ An example of steps to get daily push:
 ```
 
 ***Step 2:***
-An example of steps to get weakly push:
 
 Set daily push at 14:30 every afternoon with crontab:
 ```bash
 crontab -e
 # Write command below and save it 
-# 30 14 * * * /bin/sh /home/<user_name>/customize-arXiv-push-master/run.sh
+# 30 14 * * * /bin/sh /home/<user_name>/customize-arXiv-push-master/run_daily.sh
 crontab -l  # Check your command
 ```
 If you would like to set another time, see https://crontab.guru/examples.html to change the command.
@@ -103,7 +101,7 @@ Find the daily reports at 14:30 every afternoon.
 
 ### Getting weakly push
 
-***Step 1:*** Configure the `run.sh`:
+***Step 1:*** Configure the `run_weakly.sh`:
 
 ```bash
 #!/bin/sh
@@ -117,20 +115,20 @@ Find the daily reports at 14:30 every afternoon.
 ```
 
 ***Step 2:***
-Set weakly push at 9:10 every Friday afternoon with crontab:
+Set weakly push at 10:50 every Friday morning with crontab:
 
 ```bash
 crontab -e
 # Write command below and save it 
-# 50 10 * * 5 /bin/sh /home/<user_name>/customize-arXiv-push-master/run.sh
+# 50 10 * * 5 /bin/sh /home/<user_name>/customize-arXiv-push-master/run_weakly.sh
 crontab -l  # Check your command
 ```
 
 ***Step 3:***
-Find the weakly reports at 9:10 every Friday afternoon.
+Find the weakly reports at 10:50 every Friday morning.
 
 ## Security & Privacy
-We only provide a tool to help you find the papers with you may interested. 
+We only provide a tool to help you find the papers you interested. 
 
 It is your own responsibility to ensure the safety and privacy.
 
@@ -141,4 +139,4 @@ Feel free to contribute to our repository.
 - If you woulk like to **correct mistakes**, please do it directly;
 - If you have any **questions or advice**, please contact us by email (yuanjk@zju.edu.cn) or GitHub issues.
 
-Thank you for your cooperation and contributions!
+Thanks for your cooperation and contributions!

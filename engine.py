@@ -109,9 +109,9 @@ class ArxivSearchEngine():
         for keyword in keywords:
             author_str = author_str + keyword + ', '
             for i, authors in enumerate(self.authors[:self.paper_num[args.option]]):
-                if keyword.lower() in authors.lower():
+                if keyword in authors:
                     search_result[keyword].append(i)
-
+        
         # Save papers of interested authors
         save_path = os.path.join(self.file_dir, args.subject + f'-authors-past_{args.option}{self.time}.csv')
 

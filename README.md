@@ -3,7 +3,7 @@
 
 - It can extract recent arXiv papers with your interested authors and titles.
 
-- And push the information to your computer every day/weak.   
+- And push the information to your computer every day/week.   
 
 - If you would like to contribute to our repository or have any questions/advice, see [Contributing & Contact](#contributing--contact).
 
@@ -14,7 +14,7 @@
   - [Getting started](#getting-started)
     - [Getting a push](#getting-a-push)
     - [Getting daily push](#getting-daily-push)
-    - [Getting weakly push](#getting-weakly-push)
+    - [Getting weekly push](#getting-weekly-push)
   - [Security & Privacy](#security--privacy)
   - [Contributing & Contact](#contributing--contact)
 
@@ -29,9 +29,9 @@ pip install beautifulsoup4  # Or using pip
 
 ### Getting a push
 
-An example of steps to get a push of the papers in the past weak:
+An example of steps to get a push of the papers in the past week:
 
-***Step 1:*** Configure the `run_weakly.sh`:
+***Step 1:*** Configure the `run_weekly.sh`:
 
 ```bash
 #!/bin/sh
@@ -40,14 +40,14 @@ An example of steps to get a push of the papers in the past weak:
 --subject "cs.LG, stat.ML, stat.TH" \
 --authors "Donald B Rubin, Michael I. Jordan, Bernhard Schölkopf" \
 --titles "Variational inference, Optimization, Kernel" \
---option weak \
+--option week \
 --path /home/<user_name>/
 ```
 
 ***Step 2:*** Run 
 
 ```bash
-sh run_weakly.sh
+sh run_weekly.sh
 ```
 
 ***Step 3:***
@@ -65,7 +65,7 @@ Note:
 | Computation and Language | cs.CL |
 
 - The argument of **authors** and **titles** are the authors and titles you are interested, they should be separated by commas.
-- The argument of **option** makes search results in the past `weak` or past `day`. 
+- The argument of **option** makes search results in the past `week` or past `day`. 
 - The argument of **path** is the path to save the result with csv file. You can discard this argument and the result will be saved in the project.
 
 ### Getting daily push
@@ -99,9 +99,9 @@ If you would like to set another time, see https://crontab.guru/examples.html to
 ***Step 3:***
 Find the daily reports at 14:30 every afternoon.
 
-### Getting weakly push
+### Getting weekly push
 
-***Step 1:*** Configure the `run_weakly.sh`:
+***Step 1:*** Configure the `run_weekly.sh`:
 
 ```bash
 #!/bin/sh
@@ -110,22 +110,22 @@ Find the daily reports at 14:30 every afternoon.
 --subject "cs.CL, cs.AI, cs.LG, stat.ML" \
 --authors "Christopher D Manning, Ilya Sutskever" \
 --titles "Translation, Pretrain, Summarization" \
---option weak \
+--option week \
 --path /home/<user_name>/
 ```
 
 ***Step 2:***
-Set weakly push at 10:50 every Friday morning with crontab:
+Set weekly push at 10:50 every Friday morning with crontab:
 
 ```bash
 crontab -e
 # Write command below and save it 
-# 50 10 * * 5 /bin/sh /home/<user_name>/customize-arXiv-push-master/run_weakly.sh
+# 50 10 * * 5 /bin/sh /home/<user_name>/customize-arXiv-push-master/run_weekly.sh
 crontab -l  # Check your command
 ```
 
 ***Step 3:***
-Find the weakly reports at 10:50 every Friday morning.
+Find the weekly reports at 10:50 every Friday morning.
 
 ## Security & Privacy
 We only provide a tool to help you find the papers you interested. 

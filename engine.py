@@ -78,8 +78,8 @@ class ArxivSearchEngine():
         subjects = self.info.find_all(class_='primary-subject')
         self.subjects = [subjects[i].text for i in range(len(subjects))]
 
-        # Get number of paper in the past day/weak
-        self.paper_num = {'day': self.papers_per_day[0], 'weak': len(self.urls)}
+        # Get number of paper in the past day/week
+        self.paper_num = {'day': self.papers_per_day[0], 'week': len(self.urls)}
 
         def save_papers(subject, option='week'):
             csv_file = '-papers_past_' + option + self.time + '.csv'

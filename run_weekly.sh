@@ -3,5 +3,5 @@
 --subject "cs.CL, cs.AI, cs.LG, stat.ML" \
 --authors "Christopher D Manning, Ilya Sutskever" \
 --titles "Translation, Pretrain, Summarization" \
---option weak \
+--option week \
 --path /home/<user_name>/

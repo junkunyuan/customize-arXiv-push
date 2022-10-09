@@ -16,7 +16,7 @@ def set_config():
     parser.add_argument('--authors', default=None, type=str, help='Interested authors to search, separated by commas')
     parser.add_argument('--titles', default=None, type=str, help='Interested titles to search, separated by commas')
     # parser.add_argument('--abstracts', default=None, type=str, help='Interested abstracts to search, separated by commas')
-    parser.add_argument('--option', choices=['day', 'weak'], type=str, help='Search results in the past day or weak')
+    parser.add_argument('--option', choices=['day', 'week'], type=str, help='Search results in the past day or week')
     
     parser.add_argument('--path', default=None, type=str, help='Path to save the result with csv file')
 
